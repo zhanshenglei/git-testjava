@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hp.mapper.ProductsMapper" >
+  <resultMap id="BaseResultMap" type="com.hp.pojo.Products" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="ShopID" property="shopid" jdbcType="INTEGER" />
+    <result column="TypeCode" property="typecode" jdbcType="VARCHAR" />
+    <result column="CategoryID" property="categoryid" jdbcType="INTEGER" />
+    <result column="ProductSN" property="productsn" jdbcType="VARCHAR" />
+    <result column="ProductName" property="productname" jdbcType="VARCHAR" />
+    <result column="ProudctTyeID" property="proudcttyeid" jdbcType="INTEGER" />
+    <result column="BrandID" property="brandid" jdbcType="INTEGER" />
+    <result column="PorviderName" property="porvidername" jdbcType="VARCHAR" />
+    <result column="ProductNumber" property="productnumber" jdbcType="INTEGER" />
+    <result column="SoldNumber" property="soldnumber" jdbcType="INTEGER" />
+    <result column="ProductWeight" property="productweight" jdbcType="DECIMAL" />
+    <result column="MarketPrice" property="marketprice" jdbcType="DECIMAL" />
+    <result column="ShopPrice" property="shopprice" jdbcType="DECIMAL" />
+    <result column="ProductBrief" property="productbrief" jdbcType="VARCHAR" />
+    <result column="IsReal" property="isreal" jdbcType="BIT" />
+    <result column="Keywords" property="keywords" jdbcType="VARCHAR" />
+    <result column="IsDelete" property="isdelete" jdbcType="BIT" />
+    <result column="IsDisplay" property="isdisplay" jdbcType="BIT" />
+    <result column="ExtensionCode" property="extensioncode" jdbcType="VARCHAR" />
+    <result column="PromotionActivityID" property="promotionactivityid" jdbcType="INTEGER" />
+    <result column="AddTime" property="addtime" jdbcType="TIMESTAMP" />
+    <result column="LastUpdate" property="lastupdate" jdbcType="TIMESTAMP" />
+    <result column="GiveIntegral" property="giveintegral" jdbcType="INTEGER" />
+    <result column="IsCheck" property="ischeck" jdbcType="BIT" />
+    <result column="SellNumCount" property="sellnumcount" jdbcType="INTEGER" />
+    <result column="ClickCount" property="clickcount" jdbcType="INTEGER" />
+    <result column="Language" property="language" jdbcType="VARCHAR" />
+    <result column="DataOrder" property="dataorder" jdbcType="INTEGER" />
+    <result column="SEOTitle" property="seotitle" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <select id="Arraylist" resultMap="BaseResultMap">
+    select * from products
+  </select>
+
+  <delete id="delete" parameterType="java.lang.Integer">
+    delete from products where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <select id="findById" resultType="com.hp.pojo.Products" parameterType="java.lang.Integer">
+    select * from products where id=#{id}
+  </select>
+
+  <update id="update" parameterType="com.hp.pojo.Products" >
+    update products
+    set ShopID = #{shopid,jdbcType=INTEGER},
+      TypeCode = #{typecode,jdbcType=VARCHAR},
+      CategoryID = #{categoryid,jdbcType=INTEGER},
+      ProductSN = #{productsn,jdbcType=VARCHAR},
+      ProductName = #{productname,jdbcType=VARCHAR},
+      ProudctTyeID = #{proudcttyeid,jdbcType=INTEGER},
+      BrandID = #{brandid,jdbcType=INTEGER},
+      PorviderName = #{porvidername,jdbcType=VARCHAR},
+      ProductNumber = #{productnumber,jdbcType=INTEGER},
+      SoldNumber = #{soldnumber,jdbcType=INTEGER},
+      ProductWeight = #{productweight,jdbcType=DECIMAL},
+      MarketPrice = #{marketprice,jdbcType=DECIMAL},
+      ShopPrice = #{shopprice,jdbcType=DECIMAL},
+      ProductBrief = #{productbrief,jdbcType=VARCHAR},
+      IsReal = #{isreal,jdbcType=BIT},
+      Keywords = #{keywords,jdbcType=VARCHAR},
+      IsDelete = #{isdelete,jdbcType=BIT},
+      IsDisplay = #{isdisplay,jdbcType=BIT},
+      ExtensionCode = #{extensioncode,jdbcType=VARCHAR},
+      PromotionActivityID = #{promotionactivityid,jdbcType=INTEGER},
+      AddTime = #{addtime,jdbcType=TIMESTAMP},
+      LastUpdate = #{lastupdate,jdbcType=TIMESTAMP},
+      GiveIntegral = #{giveintegral,jdbcType=INTEGER},
+      IsCheck = #{ischeck,jdbcType=BIT},
+      SellNumCount = #{sellnumcount,jdbcType=INTEGER},
+      ClickCount = #{clickcount,jdbcType=INTEGER},
+      Language = #{language,jdbcType=VARCHAR},
+      DataOrder = #{dataorder,jdbcType=INTEGER},
+      SEOTitle = #{seotitle,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+
+  <insert id="add" parameterType="com.hp.pojo.Products" >
+    insert into products (ID, ShopID, TypeCode,
+      CategoryID, ProductSN, ProductName,
+      ProudctTyeID, BrandID, PorviderName,
+      ProductNumber, SoldNumber, ProductWeight,
+      MarketPrice, ShopPrice, ProductBrief,
+      IsReal, Keywords, IsDelete,
+      IsDisplay, ExtensionCode, PromotionActivityID,
+      AddTime, LastUpdate, GiveIntegral,
+      IsCheck, SellNumCount, ClickCount,
+      Language, DataOrder, SEOTitle)
+    values (#{id,jdbcType=INTEGER}, #{shopid,jdbcType=INTEGER}, #{typecode,jdbcType=VARCHAR},
+      #{categoryid,jdbcType=INTEGER}, #{productsn,jdbcType=VARCHAR}, #{productname,jdbcType=VARCHAR},
+      #{proudcttyeid,jdbcType=INTEGER}, #{brandid,jdbcType=INTEGER}, #{porvidername,jdbcType=VARCHAR},
+      #{productnumber,jdbcType=INTEGER}, #{soldnumber,jdbcType=INTEGER}, #{productweight,jdbcType=DECIMAL},
+      #{marketprice,jdbcType=DECIMAL}, #{shopprice,jdbcType=DECIMAL}, #{productbrief,jdbcType=VARCHAR},
+      #{isreal,jdbcType=BIT}, #{keywords,jdbcType=VARCHAR}, #{isdelete,jdbcType=BIT},
+      #{isdisplay,jdbcType=BIT}, #{extensioncode,jdbcType=VARCHAR}, #{promotionactivityid,jdbcType=INTEGER},
+      #{addtime,jdbcType=TIMESTAMP}, #{lastupdate,jdbcType=TIMESTAMP}, #{giveintegral,jdbcType=INTEGER},
+      #{ischeck,jdbcType=BIT}, #{sellnumcount,jdbcType=INTEGER}, #{clickcount,jdbcType=INTEGER},
+      #{language,jdbcType=VARCHAR}, #{dataorder,jdbcType=INTEGER}, #{seotitle,jdbcType=VARCHAR})
+  </insert>
+ </mapper>

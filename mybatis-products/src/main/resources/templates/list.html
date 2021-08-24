@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+</head>
+<body>
+<table border="1" cellpadding="10" cellspacing="0">
+    <tr align="center"><th align="center" colspan="11">欢迎<span></span>登录</th></tr>
+    <tr>
+        <th>编号</th>
+        <th>002</th>
+        <th>003</th>
+        <th>004</th>
+        <th>005</th>
+        <th>006</th>
+        <th>007</th>
+        <th>008</th>
+        <th>009</th>
+        <th>0010</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="v : ${Array}">
+        <td th:text="${v.id}"></td>
+        <td th:text="${v.shopid}"></td>
+        <td th:text="${v.typecode}"></td>
+        <td th:text="${v.categoryid}"></td>
+        <td th:text="${v.productsn}"></td>
+        <td th:text="${v.productname}"></td>
+        <td th:text="${v.proudcttyeid}"></td>
+        <td th:text="${v.language}"></td>
+        <td th:text="${v.productnumber}"></td>
+        <td th:text="${v.seotitle}"></td>
+        <td>
+            <a th:href="@{/updateById(id=${v.id})}">修改</a>
+            <a th:href="@{/delete(id=${v.id})}" onclick="return confirm('你确定删除?')">删除</a>
+        </td>
+    <tr align="center">
+    <td colspan="11">
+        <a th:href="@{/addlist}">添加</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a th:href="@{/login}">退出</a>
+    </td>
+    </tr>
+    </tr>
+
+</table>
+</form>
+</body>
+</html>

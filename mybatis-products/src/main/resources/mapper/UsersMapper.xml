@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hp.mapper.UsersMapper">
+    <resultMap id="BaseResultMap" type="com.hp.pojo.Users" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="userName" property="username" jdbcType="VARCHAR" />
+        <result column="userPwd" property="userpwd" jdbcType="VARCHAR" />
+    </resultMap>
+    <select id="login" resultMap="BaseResultMap">
+        SELECT * from users where username=#{username,jdbcType=VARCHAR} and userpwd=#{userpwd,jdbcType=VARCHAR}
+    </select>
+
+</mapper>

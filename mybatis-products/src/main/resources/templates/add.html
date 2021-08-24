@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/add}" method="post">
+    <table border="1" align="center" cellpadding="20" cellspacing="0">
+        <tr align="center"><td colspan="2">添加</td></tr>
+        <tr>
+            <td>002</td>
+            <td><input type="text" name="shopid" id="shopid" ></td>
+        </tr>
+        <tr>
+            <td>003</td>
+            <td><input type="text" name="typecode" id="typecode">
+            </td>
+        </tr>
+        <tr>
+            <td>004</td>
+            <td><input type="text"  name="categoryid" ></td>
+        </tr>
+        <tr>
+            <td>005</td>
+            <td><input type="text"  name="productsn" id="telephone" ></td>
+        </tr>
+        <tr>
+            <td>006</td>
+            <td><input type="text" name="productname"  >
+            </td>
+        </tr>
+        <tr>
+            <td>007</td>
+            <td>
+                <input type="text" name="proudcttyeid">
+            </td>
+        </tr>
+        <tr>
+            <td>008</td>
+            <td>
+                <input type="text" name="language">
+            </td>
+        </tr>
+        <tr>
+            <td>009</td>
+            <td>
+                <input type="text" name="productnumber">
+            </td>
+        </tr>
+        <tr>
+            <td>0010</td>
+            <td>
+                <input type="text" name="seotitle">
+            </td>
+        </tr>
+        <tr align="center">
+            <td colspan="2"><input type="submit" onclick="return add()"  value="确定">
+                <a th:href="@{/select}">返回</a>
+            </td>
+
+        </tr>
+    </table>
+
+</form>
+</body>
+<script type="text/javascript">
+    function add() {
+        var a = document.getElementById("shopid").value;
+        if (a == "") {
+            alert("模板2不能为空")
+            return false;
+        }
+        var b = document.getElementById("typecode").value;
+        if (b == "") {
+            alert("模板3不能为空")
+            return false;
+        }
+        return true;
+    }
+</script>
+
+</html>

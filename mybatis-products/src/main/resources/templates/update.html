@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>修改</title>
+</head>
+<body>
+<form th:action="@{/update}" method="post">
+    <input type="hidden" name="id" th:value="${produ.id}">
+    <table border="1" align="center" cellpadding="20" cellspacing="0">
+        <tr align="center"><td colspan="2">修改</td></tr>
+        <tr>
+            <td>002</td>
+            <td><input type="text" name="shopid" id="uname" th:value="${produ.shopid}"></td>
+        </tr>
+        <tr>
+            <td>003</td>
+            <td><input type="text" name="typecode" th:value="${produ.typecode}">
+            </td>
+        </tr>
+        <tr>
+            <td>004</td>
+            <td><input type="text"  name="categoryid" id="email" th:value="${produ.categoryid}"></td>
+        </tr>
+        <tr>
+            <td>005</td>
+            <td><input type="text"  name="productsn" id="telephone" th:value="${produ.productsn}"></td>
+        </tr>
+        <tr>
+            <td>006</td>
+            <td><input type="text" name="productname"  th:value="${produ.productname}">
+            </td>
+        </tr>
+        <tr>
+            <td>007</td>
+            <td>
+                <input type="text" name="proudcttyeid" th:value="${produ.proudcttyeid}">
+            </td>
+        </tr>
+        <tr>
+        <td>008</td>
+        <td>
+            <input type="text" name="language" th:value="${produ.language}">
+        </td>
+        </tr>
+        <tr>
+            <td>009</td>
+            <td>
+                <input type="text" name="productnumber" th:value="${produ.productnumber}">
+            </td>
+        </tr>
+        <tr>
+            <td>0010</td>
+            <td>
+                <input type="text" name="seotitle" th:value="${produ.seotitle}">
+            </td>
+        </tr>
+
+        <tr align="center">
+            <td colspan="2"><input type="submit"  value="确定"><a th:href="@{/select}">返回</a></td>
+        </tr>
+    </table>
+
+</form>
+
+</body>
+</html>
